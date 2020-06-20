@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 05 Third-Party APIs: Work Day Scheduler
 
 Create a simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
@@ -44,3 +45,6 @@ You are required to submit the following for review:
 
 - - -
 © 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+=======
+# workdayCalendar
+>>>>>>> 9127ef9d495efe2648990d8b8f49134f0701b858
