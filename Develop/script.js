@@ -18,14 +18,22 @@
     today = mm + '/' + dd + '/' + yyyy;
     $('#currentDay').append(today);
 
+      //var time = current hour 
+      //This variable needs to be in the global scope
+      var hour = moment().hour();
+      //set time Id's to a specific value
+        //   var hour10 = $('#hour-10')
+        //   var hour11 = $('#hour-11')
+        //   var hour12 = $('#hour-12') 
+        //   var hour13 = $('#hour-13') 
+        //   var hour14 = $('#hour-14') 
+        //   var hour15 = $('#hour-15') 
+        //   var hour16 = $('#hour-16') 
+        //   var hour17 = $('#hour-17') 
+        //   var hour18 = $('#hour-18')
     //var array to store 8 numbers to reference to display
 
-    // Create textarea variable to store data
-        //global so that all functions can access
-    //var textarea = $('<textarea>')
-
-//FUNCTIONS
-    //Function that appends the div into the .container div in the HTML
+//Function that saves textarea content to local storage
 $(document).ready(function () {
     $('.saveBtn').on('click', function(){
         var input = $(this).siblings('.textarea').val();
@@ -33,8 +41,97 @@ $(document).ready(function () {
         localStorage.setItem(input, workTime);
     })
     
-    //$('#hour-1.input').val(localStorage.getItem('#hour-1'))
+    // using localStorage.getItem to store the inputed variables
+        //$('#hour-1.input').val(localStorage.getItem('#hour-1'))
 });
+
+//function for moment.js to turn the various text areas green
+function timepresent(){
+    //with global values set, set local values equal to the specific hour string
+
+
+    //If Else Statement saying that if hour equals correct date then
+        //if the time is < current add .past css class
+        //else no change
+    //if the time === current hour then change css class to .present
+        //else no change
+    //if the time < current hour then change css class to .future
+    //USE ELSE IF
+    if (hour == '9') {
+        $('#hour-9').addClass('.present');
+    } else if (hour == '10') {
+        $('#hour-10').addClass('.present');
+    } else if (hour == '11') {
+        $('#hour-11').addClass('.present');
+    } else if (hour == '12') {
+        $('#hour-12').addClass('.present');
+    } else if (hour == '13') {
+        $('#hour-13').addClass('.present');
+    } else if (hour == '14') {
+        $('#hour-14').addClass('.present');
+    } else if (hour == '15') {
+        $('#hour-15').addClass('.present');
+    } else if (hour == '16') {
+        $('#hour-16').addClass('.present');
+    } else if (hour == '17') {
+        $('#hour-17').addClass('.present');
+    }
+
+    console.log(nineAM)
+
+}
+
+//Function to change css class if time has passed
+//if div time is > current time mark as time passed
+function timePast() {
+    if (hour !== '9') {
+        $('#hour-9').addClass('.past');
+    } else if (hour > '10') {
+        $('#hour-10').addClass('.past');
+    } else if (hour > '11') {
+        $('#hour-11').addClass('.past');
+    } else if (hour >'12') {
+        $('#hour-12').addClass('.past');
+    } else if (hour > '13') {
+        $('#hour-13').addClass('.past');
+    } else if (hour > '14') {
+        $('#hour-14').addClass('.past');
+    } else if (hour > '15') {
+        $('#hour-15').addClass('.past');
+    } else if (hour > '16') {
+        $('#hour-16').addClass('.past');
+    } else if (hour > '17') {
+        $('#hour-17').addClass('.past');
+    }
+
+}
+//similar to the above functions, if div time is < current time then display green
+function timeFuture() {
+    if (hour !== '9') {
+        $('#hour-9').addClass('.future');
+    } else if (hour < '10') {
+        $('#hour-10').addClass('.future');
+    } else if (hour < '11') {
+        $('#hour-11').addClass('.future');
+    } else if (hour <'12') {
+        $('#hour-12').addClass('.future');
+    } else if (hour < '13') {
+        $('#hour-13').addClass('.future');
+    } else if (hour < '14') {
+        $('#hour-14').addClass('.future');
+    } else if (hour < '15') {
+        $('#hour-15').addClass('.future');
+    } else if (hour < '16') {
+        $('#hour-16').addClass('.future');
+    } else if (hour < '17') {
+        $('#hour-17').addClass('.future');
+    }
+
+}
+
+
+
+
 
 
 
